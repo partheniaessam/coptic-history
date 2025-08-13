@@ -31,36 +31,16 @@
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
         .event {
-            padding: 20px;
-            margin-bottom: 30px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
             position: relative;
-            width: 48%;
-        }
-        .left {
-            margin-right: 52%;
-        }
-        .right {
-            margin-left: 52%;
-        }
-        .event::before {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #D4AF37;
-            top: 30px;
-            border-radius: 50%;
-        }
-        .left::before {
-            left: -10px;
-        }
-        .right::before {
-            right: -10px;
         }
         h2 {
             color: #003366;
@@ -69,23 +49,29 @@
         .date {
             font-weight: bold;
             color: #D4AF37;
+            margin-bottom: 10px;
+            display: block;
         }
         .event-image {
-            width: 100%;       /* تأخذ عرض العنصر الأب بالكامل */
-            height: auto;      /* تحافظ على التناسب تلقائيًا */
-            max-height: 300px; /* حد أقصى للارتفاع (اختياري) */
-            object-fit: cover; /* تغطي المساحة دون تشويه (لصور غير متساوية) */
-            display: block;    /* تمنع أي هوامش غير مرغوبة */
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
         }
-        @media screen and (max-width: 768px) {
-            .event, .left, .right {
-                width: 100%;
-                margin: 0 0 30px 0 !important;
+        /* نسخة الكمبيوتر */
+        @media screen and (min-width: 769px) {
+            .timeline {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
             }
-            .event::before {
-                left: 10px !important;
-                right: auto !important;
-                top: -10px;
+            .event:nth-child(odd) {
+                grid-column: 1;
+            }
+            .event:nth-child(even) {
+                grid-column: 2;
             }
         }
     </style>
@@ -97,59 +83,51 @@
     </div>
 
     <div class="timeline">
-        <!-- المحطة 1 -->
-        <div class="event left">
+        <div class="event">
             <h2>الإسكندرية (61 م)</h2>
-            <div class="date">61 م - 1320 م</div>
+            <span class="date">61 م - 1320 م</span>
             <img src="1-4-1-.jpg" alt="كنيسة مارمرقس بالإسكندرية" class="event-image">
             <p>بداية الكرازة المرقسية مع قصة القديس مارمرقس والإسكافي أنيانوس. كانت كنيسة بوكاليا أول مقر بابوي.</p>
-            
         </div>
 
-        <!-- المحطة 2 -->
-        <div class="event right">
+        <div class="event">
             <h2>الكنيسة المعلقة - القاهرة</h2>
-            <div class="date">1320 م - 1660 م</div>
+            <span class="date">1320 م - 1660 م</span>
             <img src="1-4-2--853x1024.jpg" alt="الكنيسة المعلقة" class="event-image">
             <p>انتقل المقر إلى الكنيسة المعلقة في مصر القديمة، والتي بناها الرومان فوق بوابة حصن بابليون.</p>
         </div>
 
-        <!-- المحطة 3 -->
-        <div class="event left">
+        <div class="event">
             <h2>حارة زويلة</h2>
-            <div class="date">1660 م - 1799 م</div>
+            <span class="date">1660 م - 1799 م</span>
             <img src="1-4-3-.jpg" alt="كنيسة حارة زويلة" class="event-image">
             <p>كنيسة العذراء بحارة زويلة التي اشتهرت بجمال عمارتها وأيقوناتها المزخرفة.</p>
         </div>
 
-        <!-- المحطة 4 -->
-        <div class="event right">
+        <div class="event">
             <h2>حارة الروم</h2>
-            <div class="date">1799 م - 1971 م</div>
+            <span class="date">1799 م - 1971 م</span>
             <img src="1-4-4-.jpg" alt="كنيسة العذراء المغيثة" class="event-image">
             <p>كنيسة العذراء المغيثة التي سميت نسبة لشفاعة السيدة العذراء في أوقات الشدة.</p>
         </div>
 
-        <!-- المحطة 5 -->
-        <div class="event left">
+        <div class="event">
             <h2>كاتدرائية الأزبكية</h2>
-            <div class="date">1971 م - الآن</div>
+            <span class="date">1971 م - الآن</span>
             <img src="1-4-5-.jpg" alt="كاتدرائية الأزبكية" class="event-image">
             <p>الكاتدرائية المرقسية الكبرى التي شهدت أحداثًا هامة مثل تجليس البابا شنودة الثالث.</p>
         </div>
 
-        <!-- المحطة 6: العباسية (المضافة الآن) -->
-        <div class="event right">
+        <div class="event">
             <h2>كاتدرائية العباسية</h2>
-            <div class="date">1968 م - 2019 م</div>
+            <span class="date">1968 م - 2019 م</span>
             <img src="1-4-6--1024x594.jpg" alt="كاتدرائية العباسية" class="event-image">
             <p>الكاتدرائية المرقسية بالعباسية التي افتتحها البابا كيرلس السادس بحضور الرئيس جمال عبد الناصر.</p>
         </div>
 
-        <!-- المحطة 7: العاصمة الإدارية -->
-        <div class="event left">
+        <div class="event">
             <h2>العاصمة الإدارية</h2>
-            <div class="date">2019 م - الآن</div>
+            <span class="date">2019 م - الآن</span>
             <img src="1-4-7-.jpg" alt="كاتدرائية ميلاد المسيح" class="event-image">
             <p>كاتدرائية ميلاد المسيح، أكبر كاتدرائية في الشرق الأوسط والمقر البابوي الحالي.</p>
         </div>
