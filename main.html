@@ -1,170 +1,168 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>رحلة الكرسي المرقسي</title>
-<style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #939485;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة الكرسي المرقسي</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #939485;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    .header {
-        background: linear-gradient(135deg, #003366 0%, #D4AF37 100%);
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #D4AF37 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-        margin: 0;
-        font-size: 2.5rem;
-    }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
 
-    .subtitle {
-        font-size: 1.2rem;
-        opacity: 0.9;
-    }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-    .timeline {
-        max-width: 1200px;
-        margin: 3rem auto;
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+        .timeline {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
 
-    .event {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        position: relative;
-        width: 48%;
-        padding: 20px;
-    }
-
-    /* فردي: يمين */
-    .event:nth-child(odd) {
-        align-self: flex-end;
-    }
-
-    /* زوجي: شمال */
-    .event:nth-child(even) {
-        align-self: flex-start;
-    }
-
-    .event::before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: #D4AF37;
-        top: 30px;
-        border-radius: 50%;
-    }
-
-    .event:nth-child(odd)::before {
-        right: -10px;
-    }
-
-    .event:nth-child(even)::before {
-        left: -10px;
-    }
-
-    h2 {
-        color: #003366;
-        margin-top: 0;
-    }
-
-    .date {
-        font-weight: bold;
-        color: #D4AF37;
-    }
-
-    .event-image {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: cover;
-        display: block;
-        border-radius: 8px;
-    }
-
-    /* موبايل */
-    @media screen and (max-width: 768px) {
         .event {
-            width: 100% !important;
-            align-self: center !important;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
         }
-        .event::before {
-            left: 10px !important;
-            right: auto !important;
-            top: -10px;
+
+        .event img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
         }
-    }
-</style>
+
+        .event-content {
+            flex: 1;
+        }
+
+        h2 {
+            color: #003366;
+            margin-top: 0;
+        }
+
+        .date {
+            font-weight: bold;
+            color: #D4AF37;
+        }
+
+        /* يمين وشمال بالتبادل */
+        .event:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* على الموبايل */
+        @media screen and (max-width: 768px) {
+            .event {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .event img {
+                max-width: 100%;
+            }
+
+            .event-content {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="header">
-    <h1>رحلة الكرسي المرقسي</h1>
-    <div class="subtitle">المقرات البابوية عبر العصور</div>
-</div>
-
-<div class="timeline">
-    <div class="event">
-        <h2>الإسكندرية (61 م)</h2>
-        <div class="date">61 م - 1320 م</div>
-        <img src="1-4-1-.jpg" alt="كنيسة مارمرقس بالإسكندرية" class="event-image">
-        <p>بداية الكرازة المرقسية مع قصة القديس مارمرقس والإسكافي أنيانوس. كانت كنيسة بوكاليا أول مقر بابوي.</p>
+    <div class="header">
+        <h1>رحلة الكرسي المرقسي</h1>
+        <div class="subtitle">المقرات البابوية عبر العصور</div>
     </div>
 
-    <div class="event">
-        <h2>الكنيسة المعلقة - القاهرة</h2>
-        <div class="date">1320 م - 1660 م</div>
-        <img src="1-4-2--853x1024.jpg" alt="الكنيسة المعلقة" class="event-image">
-        <p>انتقل المقر إلى الكنيسة المعلقة في مصر القديمة، والتي بناها الرومان فوق بوابة حصن بابليون.</p>
-    </div>
+    <div class="timeline">
+        <div class="event">
+            <img src="1-4-1-.jpg" alt="كنيسة مارمرقس بالإسكندرية">
+            <div class="event-content">
+                <h2>الإسكندرية (61 م)</h2>
+                <div class="date">61 م - 1320 م</div>
+                <p>بداية الكرازة المرقسية مع قصة القديس مارمرقس والإسكافي أنيانوس. كانت كنيسة بوكاليا أول مقر بابوي.</p>
+            </div>
+        </div>
 
-    <div class="event">
-        <h2>حارة زويلة</h2>
-        <div class="date">1660 م - 1799 م</div>
-        <img src="1-4-3-.jpg" alt="كنيسة حارة زويلة" class="event-image">
-        <p>كنيسة العذراء بحارة زويلة التي اشتهرت بجمال عمارتها وأيقوناتها المزخرفة.</p>
-    </div>
+        <div class="event">
+            <img src="1-4-2--853x1024.jpg" alt="الكنيسة المعلقة">
+            <div class="event-content">
+                <h2>الكنيسة المعلقة - القاهرة</h2>
+                <div class="date">1320 م - 1660 م</div>
+                <p>انتقل المقر إلى الكنيسة المعلقة في مصر القديمة، والتي بناها الرومان فوق بوابة حصن بابليون.</p>
+            </div>
+        </div>
 
-    <div class="event">
-        <h2>حارة الروم</h2>
-        <div class="date">1799 م - 1971 م</div>
-        <img src="1-4-4-.jpg" alt="كنيسة العذراء المغيثة" class="event-image">
-        <p>كنيسة العذراء المغيثة التي سميت نسبة لشفاعة السيدة العذراء في أوقات الشدة.</p>
-    </div>
+        <div class="event">
+            <img src="1-4-3-.jpg" alt="كنيسة حارة زويلة">
+            <div class="event-content">
+                <h2>حارة زويلة</h2>
+                <div class="date">1660 م - 1799 م</div>
+                <p>كنيسة العذراء بحارة زويلة التي اشتهرت بجمال عمارتها وأيقوناتها المزخرفة.</p>
+            </div>
+        </div>
 
-    <div class="event">
-        <h2>كاتدرائية الأزبكية</h2>
-        <div class="date">1971 م - الآن</div>
-        <img src="1-4-5-.jpg" alt="كاتدرائية الأزبكية" class="event-image">
-        <p>الكاتدرائية المرقسية الكبرى التي شهدت أحداثًا هامة مثل تجليس البابا شنودة الثالث.</p>
-    </div>
+        <div class="event">
+            <img src="1-4-4-.jpg" alt="كنيسة العذراء المغيثة">
+            <div class="event-content">
+                <h2>حارة الروم</h2>
+                <div class="date">1799 م - 1971 م</div>
+                <p>كنيسة العذراء المغيثة التي سميت نسبة لشفاعة السيدة العذراء في أوقات الشدة.</p>
+            </div>
+        </div>
 
-    <div class="event">
-        <h2>كاتدرائية العباسية</h2>
-        <div class="date">1968 م - 2019 م</div>
-        <img src="1-4-6--1024x594.jpg" alt="كاتدرائية العباسية" class="event-image">
-        <p>الكاتدرائية المرقسية بالعباسية التي افتتحها البابا كيرلس السادس بحضور الرئيس جمال عبد الناصر.</p>
-    </div>
+        <div class="event">
+            <img src="1-4-5-.jpg" alt="كاتدرائية الأزبكية">
+            <div class="event-content">
+                <h2>كاتدرائية الأزبكية</h2>
+                <div class="date">1971 م - الآن</div>
+                <p>الكاتدرائية المرقسية الكبرى التي شهدت أحداثًا هامة مثل تجليس البابا شنودة الثالث.</p>
+            </div>
+        </div>
 
-    <div class="event">
-        <h2>العاصمة الإدارية</h2>
-        <div class="date">2019 م - الآن</div>
-        <img src="1-4-7-.jpg" alt="كاتدرائية ميلاد المسيح" class="event-image">
-        <p>كاتدرائية ميلاد المسيح، أكبر كاتدرائية في الشرق الأوسط والمقر البابوي الحالي.</p>
+        <div class="event">
+            <img src="1-4-6--1024x594.jpg" alt="كاتدرائية العباسية">
+            <div class="event-content">
+                <h2>كاتدرائية العباسية</h2>
+                <div class="date">1968 م - 2019 م</div>
+                <p>الكاتدرائية المرقسية بالعباسية التي افتتحها البابا كيرلس السادس بحضور الرئيس جمال عبد الناصر.</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="1-4-7-.jpg" alt="كاتدرائية ميلاد المسيح">
+            <div class="event-content">
+                <h2>العاصمة الإدارية</h2>
+                <div class="date">2019 م - الآن</div>
+                <p>كاتدرائية ميلاد المسيح، أكبر كاتدرائية في الشرق الأوسط والمقر البابوي الحالي.</p>
+            </div>
+        </div>
     </div>
-</div>
 </body>
 </html>
